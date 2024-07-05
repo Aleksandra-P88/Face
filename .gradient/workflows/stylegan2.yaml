@@ -1,4 +1,4 @@
 on:
-  github:
+ github:
    branches:
-      only: main
+     only: main
