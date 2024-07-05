@@ -1,4 +1,0 @@
-on:
- github:
-   branches:
-     only: main
