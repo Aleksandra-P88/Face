@@ -12,3 +12,20 @@ on:
     uses: git-checkout@v1
     with:
       url: https://github.com/NVlabs/stylegan2.git
+
+    getPretrainedModelCats:
+    resources:
+      instance-type: C4
+    outputs:
+      pretrainedNetwork:
+        type: dataset
+        with:
+          ref: stylegan2-wsp-cats-pretrained-network
+    uses: container@v1
+    with:
+      args:
+        - wget
+        - https://nvlabs-fi-cdn.nvidia.com/stylegan2/networks/stylegan2-cat-config-f.pkl
+        - -P
+        - /outputs/pretrainedNetwork
+      image: alpine:latest
